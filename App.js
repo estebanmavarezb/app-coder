@@ -8,18 +8,15 @@ const App = () => {
   const [mostrarForm, setmortrarForm] = useState(false);
   //definir citas
   const [citas, setCitas] = useState([]);
-
   ////funcion eliminar paciente
   const eliminarCita = id =>{
     const citasFiltradas = citas.filter( cita => cita.id !== id );
     setCitas(citasFiltradas);
   };
-
   /// funcion mostrar y ocultar
   const btnMostrar = () => {
     setmortrarForm(!mostrarForm);
   };
-
   /// funcion para cerrar el teclado
   const cerrarTeclado = () => {
     Keyboard.dismiss();
@@ -57,7 +54,6 @@ const App = () => {
     </TouchableWithoutFeedback>
   );
 };
-
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#000',
@@ -97,5 +93,4 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
-
 export default App;

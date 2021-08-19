@@ -17,16 +17,13 @@ const FormApp = ({citas, setCitas, setmortrarForm}) => {
   /////tiempo y hora
   const [fechaDate, setfechaDate] = useState('');
   const [fechaTime, setfechaTime] = useState('');
-
   /// funciones de hora y fecha
   const showDatePicker = () => {
     setDatePickerVisibility(true);
   };
-
   const hideDatePicker = () => {
     setDatePickerVisibility(false);
   };
-
   const confirmDate = (date) => {
     const optionDate = {
       year: 'numeric',
@@ -36,15 +33,12 @@ const FormApp = ({citas, setCitas, setmortrarForm}) => {
     setfechaDate(date.toLocaleDateString('es-ES', optionDate));
     hideDatePicker();
   };
-
   const showTimePicker = () => {
     setTimePickerVisibility(true);
   };
-
   const hideTimePicker = () => {
     setTimePickerVisibility(false);
   };
-
   const confirmTime = (time) => {
     const optionTime = {
       hour: '2-digit',
@@ -53,7 +47,6 @@ const FormApp = ({citas, setCitas, setmortrarForm}) => {
     setfechaTime(time.toLocaleString('en-US', optionTime));
     hideTimePicker();
   };
-
   ///funcion de agendar las citas
   const agendarCita = () =>{
     if (
@@ -72,7 +65,6 @@ const FormApp = ({citas, setCitas, setmortrarForm}) => {
       cellPhone,
       tipoCita,
     };
-
     crearCita.id = shortid.generate();
     console.log(crearCita)
     const citasNew = [...citas, crearCita];
@@ -81,7 +73,6 @@ const FormApp = ({citas, setCitas, setmortrarForm}) => {
     ///ocualtar y resetear form
     setmortrarForm(false);
   };
-
   ///muestra una alerta si no se llenan los campos
   const mostrarAlerta = () => {
     Alert.alert(
@@ -130,7 +121,6 @@ const FormApp = ({citas, setCitas, setmortrarForm}) => {
                 keyboardType={'phone-pad'}
               />
           </View>
-
           <View style={styles.buttoDate}>
             <Text style={styles.labelHora}>Fecha:</Text>
             <Button title="Selecciona fecha" onPress={showDatePicker}/>

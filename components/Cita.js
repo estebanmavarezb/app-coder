@@ -6,7 +6,6 @@ const Cita = ({item, eliminarCita}) => {
   const removerCita = (id) => {
     eliminarCita(id);
   };
-
   return (
     <View style={styles.contenedor}>
       <View  style={styles.cita}>
